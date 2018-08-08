@@ -1,0 +1,3 @@
+const registerPayment = ({firebase, values}) => {
+  
+}
