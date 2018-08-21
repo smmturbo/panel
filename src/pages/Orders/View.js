@@ -14,4 +14,4 @@ class ViewOrderPage extends React.PureComponent {
   }
 }
 
-export { ViewOrderPage }
+export default ViewOrderPage

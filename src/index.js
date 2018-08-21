@@ -2,12 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/integration/react'
-import { store, persistor } from './store'
+//import { PersistGate } from 'redux-persist/integration/react'
+import { store } from './store'
 
 import registerServiceWorker from './registerServiceWorker'
-
-import { LoadingMessage } from './components/interface'
 
 import 'bootstrap/dist/css/bootstrap.css';
 

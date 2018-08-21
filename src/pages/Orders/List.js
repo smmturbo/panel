@@ -2,15 +2,13 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 //import axios from 'axios'
 
-import { PageHeader, LoadingMessage, PageToolbar  } from '../../components/interface'
+import { PageHeader, PageToolbar  } from '../../components/interface'
 import { OrderStatusFilter } from '../../components/orders'
 import { OrdersWrapper } from '../../wrappers'
 
-import systemData from "../../utils/systemData"
-
 class OrdersPage extends React.Component {
 
-  state = { status: null }
+  state = { status: 'processing' }
 
   render()  {
 
@@ -36,10 +34,6 @@ class OrdersPage extends React.Component {
   _helmet() {
     return <Helmet><title>Gerenciamento de pedidos - PainelAS</title></Helmet>
   }
-
-  // componentDidMount() {
-  //   axios.get('https://us-central1-famaja-pagamento.cloudfunctions.net/testCheckordersStatuses').catch(error => console.log(error))
-  // }
 }
 
-export { OrdersPage }
+export default OrdersPage

@@ -1,9 +1,7 @@
 import React from 'react'
 import { PageHeader, Whatsapp } from '../../components/interface'
 import { ListGroup, ListGroupItem } from 'reactstrap'
-
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import faWhatsapp from '@fortawesome/fontawesome-free-brands/faWhatsapp'
+import { Link } from 'react-router-dom'
 
 class HelpPage extends React.PureComponent {
 
@@ -15,9 +13,12 @@ class HelpPage extends React.PureComponent {
               <p>Se encontrou algum problema, entre em contato conosco:</p>
 
               <ListGroup>
+                <ListGroupItem tag={Link} to="/faq" >
+                  Perguntas Frequentes
+                </ListGroupItem>
                 <ListGroupItem>
                   <small>E-mail</small>
-                  <h5>suporte@aumentarseguidores.com</h5>
+                  <h5>suporte@aumentarseguidores.com.br</h5>
                 </ListGroupItem>
 
                 <ListGroupItem>
@@ -32,4 +33,4 @@ class HelpPage extends React.PureComponent {
   }
 }
 
-export { HelpPage }
+export default HelpPage

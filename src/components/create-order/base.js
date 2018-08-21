@@ -1,11 +1,9 @@
 import React from 'react'
-import { Row, Col } from 'reactstrap'
 import _ from 'lodash'
 import { isEmpty } from 'react-redux-firebase'
 
-import { generateOrder } from '../../helpers/orders'
-
 import { CreateOrderCategoryList, CreateOrderProductList, CreateOrderForm } from './'
+import { ProductAlerts } from '../products'
 
 class CreateOrder extends React.Component {
 
@@ -14,21 +12,20 @@ class CreateOrder extends React.Component {
   render()  {
 
     return (<div className="my-3" >
+
               <CreateOrderCategoryList categories={this.props.categories} handleClick={this._selectCategory} />
 
-              <Row>
-                <Col sm="12" md="4" className="mb-3" >
-                  <CreateOrderProductList
-                    products={this._filterProducts()}
-                    handleClick={this._selectProduct}
-                    selected={this.state.product}
-                  />
-                </Col>
-                <Col sm="12" md="8">
-                  <CreateOrderForm product={this.state.product} handleAction={this._placeOrder} processing={this.props.processing} />
-                </Col>
-              </Row>
+              <CreateOrderProductList
+                products={this._filterProducts()}
+                handleClick={this._selectProduct}
+                selected={this.state.product}
+              />
 
+              <ProductAlerts alerts={this.state.product.alerts} />
+
+              <div className="my-3" >
+                <CreateOrderForm product={this.state.product} handleAction={this._placeOrder} {...this.props} />
+              </div>
             </div>)
   }
 
@@ -52,9 +49,7 @@ class CreateOrder extends React.Component {
     return _.filter( products, p => p.category === this.state.category.id )
   }
 
-  _placeOrder = (values) => {
-    const { product } = this.state
-    const order = generateOrder(values, product)
+  _placeOrder = (order) => {
     this.props.handleAction(order)
     return
   }

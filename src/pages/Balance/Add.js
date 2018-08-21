@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { Card, CardBody, CardHeader } from 'reactstrap'
 
-import { PageHeader, PageToolbar } from '../../components/interface'
+import { PageHeader, PageToolbar, PS } from '../../components/interface'
 import { BankAccountsWrapper } from '../../wrappers'
+import { TEMP_ADD_BALANCE_PRODUCT_URL } from '../../utils/constants'
 
 class AddBalancePage extends Component {
 
@@ -17,6 +19,19 @@ class AddBalancePage extends Component {
 
         <PageToolbar left={[{label: 'Voltar', to: `/`}]} />
 
+        <PS>PagSeguro / Mercado Pago</PS>
+
+        <Card>
+          <CardHeader>Cartão de Crédito e Boleto Bancário</CardHeader>
+          <CardBody>
+            <a href={TEMP_ADD_BALANCE_PRODUCT_URL} target="_blank" className="btn btn-primary" >
+              Pagar via PagSeguro e Mercado Pago
+            </a>
+          </CardBody>
+        </Card>
+
+        <PS>Transferência Bancária</PS>
+
         <BankAccountsWrapper />
 
       </div>
@@ -24,4 +39,4 @@ class AddBalancePage extends Component {
   }
 }
 
-export { AddBalancePage }
+export default AddBalancePage

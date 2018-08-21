@@ -5,20 +5,21 @@ import { compose } from 'recompose'
 import { withFirebase } from 'react-redux-firebase'
 import { connect } from 'react-redux'
 
-import { FormInput, FormToggler, PageHeader } from '../interface'
+import { FormInput, PageHeader, LoadingMessage } from '../interface'
 import { notifyError } from '../../actions'
 import { AuthToggler } from './'
 
 class AuthRegister extends React.Component {
 
-  state = { step: 0 }
+  state = { step: 0, processing: false }
 
   onSubmit = async (values) => {
 
     const { firebase } = this.props
     const { email, password, password_repeat, name, phone } = values
+    const profile = { email, createdOn: Date.now() }
 
-    const profile = { email }
+    this.setState({processing: true})
 
     if(name)  {
       profile.name = name
@@ -29,10 +30,13 @@ class AuthRegister extends React.Component {
     }
 
     if(email && password === password_repeat) {
-      firebase.createUser({ email, password }, profile ).catch(error => this.props.notifyError(error.message))
+      await firebase.createUser({ email, password }, profile ).catch(error => this.props.notifyError(error.message))
+
+      this.setState({processing: false })
     }
     else {
       this.props.notifyError('E-mail não informado ou senhas não batem.')
+      this.setState({processing: false })
     }
   }
 
@@ -76,10 +80,11 @@ class AuthRegister extends React.Component {
 
                       <p>As informações fornecidas serão mantidas em total sigilo e apenas utilizamos para prestar um melhor suporte.</p>
 
-
                       <div className="my-3 d-flex justify-content-between align-items-center">
                         <Button color="primary" >Prosseguir</Button>
+                        { this.state.processing ? <LoadingMessage /> : '' }
                       </div>
+
                     </form>
                   </CardBody>
                 </Card>

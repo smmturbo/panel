@@ -5,16 +5,27 @@ import { compose } from 'recompose'
 import { withFirebase } from 'react-redux-firebase'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { FormInput, FormToggler, PageHeader } from '../interface'
+import { FormInput, PageHeader, LoadingMessage } from '../interface'
 import { notifyError } from '../../actions'
 import { AuthToggler } from './'
 
 class AuthLogin extends React.Component {
 
+  state = { processing: false }
+
   onSubmit = async (values) => {
+
+    this.setState({processing: true})
+
     const { firebase } = this.props
+
     if(values.email && values.password) {
-      firebase.login(values).catch(error => this.props.notifyError(error.message))
+      await firebase.login(values).catch(error => this.props.notifyError(error.message))
+      this.setState({processing: false})
+    }
+    else {
+      this.props.notifyError('Usuário ou senha faltando')
+      this.setState({processing: false})
     }
   }
 
@@ -46,6 +57,7 @@ class AuthLogin extends React.Component {
 
                       <div className="my-3 d-flex justify-content-between align-items-center">
                         <Button color="primary" >Prosseguir</Button>
+                        { this.state.processing ? <LoadingMessage /> : '' }
                         <Link to="/auth/reset" >Recuperar senha</Link>
                       </div>
 

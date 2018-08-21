@@ -12,7 +12,7 @@ class BalanceTransactionsListItem extends React.PureComponent {
       <tr>
         <td>{ balanceTransaction.id }</td>
         <td>{ this._renderDate() }</td>
-        <td>{ balanceTransaction.amount }</td>
+        <td>{ balanceTransaction.charge }</td>
         <td>{ this._renderRefLink() }</td>
       </tr>
     )

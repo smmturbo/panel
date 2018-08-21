@@ -15,7 +15,6 @@ class OrderStatusFilter extends React.PureComponent {
                     }}
             >
               <ButtonGroup>
-                <Button color="primary" outline={!!status} onClick={ () => handleClick(null) } >Todos</Button>
                 { _.map(statuses, statusItem => <Button key={`${statusItem.child}-${statusItem.status}`} color="primary" outline={status !== statusItem.status} onClick={() => handleClick(statusItem.status, statusItem.child)} >{statusItem.label}</Button> ) }
               </ButtonGroup>
             </div>)
@@ -27,6 +26,10 @@ export { OrderStatusFilter }
 const statuses = [
   {
     status: 'processing',
+    label: 'Processando'
+  },
+  {
+    status: 'pending',
     label: 'Aguardando'
   },
   {
@@ -35,6 +38,6 @@ const statuses = [
   },
   {
     status: 'cancelled',
-    label: 'Cancelados'
+    label: 'Cancelados/Erro'
   }
 ]

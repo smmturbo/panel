@@ -18,8 +18,9 @@ class OrderList extends React.PureComponent {
                   <tr>
                     <th>ID/Data</th>
                     <th>Serviço</th>
-                    <th>Quantidade</th>
+                    <th>Quant.</th>
                     <th>Perfil/Link</th>
+                    <th>Cont. Inicial</th>
                     <th>Valor</th>
                     <th>Status</th>
                   </tr>

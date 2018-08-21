@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 
-import { PageHeader, LoadingMessage, EmptyList  } from '../components/interface'
+import { LoadingMessage, EmptyList  } from '../components/interface'
 import { SubscriptionList } from '../components/subscriptions'
 
 class SubscriptionsWrapper extends React.Component {
@@ -26,8 +26,8 @@ function mapStateToProps({ firebase: { data } }) {
   return { subscriptions: data.subscriptions }
 }
 
-function firebaseData(props, store) {
-  return [{ path: `/userSubscriptions/${store.getState().firebase.auth.uid}`, storeAs: 'subscriptions' }]
+function firebaseData({ status }, store) {
+  return [{ path: `/userSubscriptions/${store.getState().firebase.auth.uid}`, storeAs: 'subscriptions', queryParams: ['orderByChild=status', `equalTo=${status}`] }]
 }
 
 SubscriptionsWrapper = firebaseConnect(firebaseData)(SubscriptionsWrapper)

@@ -11,8 +11,6 @@ class BalanceTransactionsWrapper extends React.Component {
   render()  {
     const { balanceTransactions } = this.props
 
-    console.log({balanceTransactions})
-
     if( !isLoaded(balanceTransactions) ) {
       return <LoadingMessage />
     }

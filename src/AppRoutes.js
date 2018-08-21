@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
-
-import {
-  LogoutPage, LoginPage, ResetPasswordPage, RegisterPage,
-  DashboardPage,
-  OrdersPage, ViewOrderPage, CreateOrderPage, SubscriptionsPage,
-  NetworksPage, ViewNetworkPage,
-  ProductsPage, ViewProductPage, EditProductPage, EditProductVariationPage,
-  ViewBalancePage, AddBalancePage,
-  AccountPage,
-  HelpPage, TermsPage
-
-} from './pages'
-
 import { AppFooter, AppHeader } from './components/layout'
 import { AppNotifications } from './components/interface'
+import { UserIsAuthenticated, UserIsNotAuthenticated } from './utils/authorization-layer'
+import { URL_DEFAULT_SITE_URL } from './utils/constants'
+import asyncComponent from "./components/AsyncComponent"
 
-import { UserIsAuthenticated, UserIsNotAuthenticated, UserIsOnboarded } from './utils/authorization-layer'
+const LogoutPage = asyncComponent(() => import("./pages/Auth/Logout"))
+const LoginPage = asyncComponent(() => import("./pages/Auth/Login"))
+const ResetPasswordPage = asyncComponent(() => import("./pages/Auth/Reset"))
+const RegisterPage = asyncComponent(() => import("./pages/Auth/Register"))
 
-import { DEFAULT_SITE_URL } from './utils/constants'
+const DashboardPage = asyncComponent(() => import("./pages/Dashboard"))
+
+const OrdersPage = asyncComponent(() => import("./pages/Orders/List"))
+const ViewOrderPage = asyncComponent(() => import("./pages/Orders/View"))
+const CreateOrderPage = asyncComponent(() => import("./pages/Orders/Create"))
+const SubscriptionsPage = asyncComponent(() => import("./pages/Subscriptions/List"))
+const ProductsPage = asyncComponent(() => import("./pages/Products"))
+
+const ViewBalancePage = asyncComponent(() => import("./pages/Balance/View"))
+const AddBalancePage = asyncComponent(() => import("./pages/Balance/Add"))
+
+const ViewAccountPage = asyncComponent(() => import("./pages/Account/View"))
+const ApiKeyPage = asyncComponent(() => import("./pages/Account/Api"))
+const ApiDocsPage = asyncComponent(() => import("./pages/Extras/ApiDocs"))
+
+const HelpPage = asyncComponent(() => import("./pages/Extras/Help"))
+const TermsPage = asyncComponent(() => import("./pages/Extras/Terms"))
+const FaqPage = asyncComponent(() => import("./pages/Extras/Faq"))
 
 class AppRoutes extends Component {
 
@@ -46,13 +56,18 @@ class AppRoutes extends Component {
           <Route path="/orders" exact component={UserIsAuthenticated(OrdersPage)} />
           <Route path="/subscriptions" exact component={UserIsAuthenticated(SubscriptionsPage)} />
 
+          <Route path="/catalog" exact component={UserIsAuthenticated(ProductsPage)} />
+
           <Route path="/balance/add" exact component={UserIsAuthenticated(AddBalancePage)} />
           <Route path="/balance" exact component={UserIsAuthenticated(ViewBalancePage)} />
 
-          <Route path="/account" exact component={UserIsAuthenticated(AccountPage)} />
+          <Route path="/account/api" exact component={ApiKeyPage} />
+          <Route path="/account" exact component={UserIsAuthenticated(ViewAccountPage)} />
 
           <Route path="/support" exact component={HelpPage} />
           <Route path="/terms" exact component={TermsPage} />
+          <Route path="/faq" exact component={FaqPage} />
+          <Route path="/apidocs" exact component={ApiDocsPage} />
 
           <Route path="/" exact component={UserIsAuthenticated(DashboardPage)} />
 
@@ -79,7 +94,7 @@ class AppRoutes extends Component {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={DEFAULT_SITE_URL} />
+        <meta property="og:url" content={URL_DEFAULT_SITE_URL} />
       </Helmet>
     )
   }

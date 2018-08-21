@@ -1,5 +1,5 @@
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
-import { HOME_PATH } from './constants'
+import { PATH_HOME } from './constants'
 import { LoadingMessage } from '../components/interface'
 import locationHelperBuilder from 'redux-auth-wrapper/history4/locationHelper'
 
@@ -73,7 +73,7 @@ export const UserIsNotAuthenticated = connectedRouterRedirect({
 
   redirectPath: (state, props) =>
     // redirect to page user was on or to list path
-    locationHelper.getRedirectQueryParam(props) || HOME_PATH,
+    locationHelper.getRedirectQueryParam(props) || PATH_HOME,
 
   authSelector: ({ firebase: { auth } }) => auth,
 

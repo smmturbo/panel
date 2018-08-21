@@ -9,7 +9,7 @@ class Whatsapp extends React.PureComponent {
 
     const { number } = this.props
 
-    return (<div className="my-2" ><a href={`https://wa.me/+55${number}`} className="btn btn-success" target="_blank" >
+    return (<div className="my-2" ><a href={`https://wa.me/55${number}`} className="btn btn-success" target="_blank" >
               {number} <FontAwesomeIcon icon={faWhatsapp} />
             </a></div>)
   }

@@ -1,11 +1,10 @@
 
 const generateMinMaxPosts = (values) =>  {
   const intQuantity = parseInt(values.quantity, 10)
-  const modifier = Math.ceil(intQuantity * 0.05)
   const posts = parseInt( values.posts, 10 )
   return {
-    min: intQuantity - modifier,
-    max: intQuantity + modifier,
+    min: intQuantity,
+    max: intQuantity,
     posts,
     quantity: intQuantity * posts
   }

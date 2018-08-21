@@ -9,7 +9,7 @@ class UserBalance extends React.Component {
     const { balance } = this.props
 
     if(!isLoaded(balance) || isEmpty(balance)) {
-      return null
+      return '...'
     }
 
     return <span>R${this.props.balance.current}</span>
@@ -22,7 +22,7 @@ const mapStateToProps = ({ firebase: { data } }) =>  {
 
 const firebaseData = (props, store) =>  {
   const uid = store.getState().firebase.auth.uid
-  return [ { path: `/userData/${uid}/balance`, storeAs: 'balance' } ]
+  return [ { path: `/profiles/${uid}/balance`, storeAs: 'balance' } ]
 }
 
 UserBalance = firebaseConnect(firebaseData)(UserBalance)

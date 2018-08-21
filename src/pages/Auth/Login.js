@@ -13,6 +13,6 @@ const LoginPage = () => {
   )
 }
 
-export { LoginPage }
+export default LoginPage
 
 const title = "Login - AumentarSeguidores.com"

@@ -15,4 +15,4 @@ class DashboardPage extends React.PureComponent {
   }
 }
 
-export { DashboardPage }
+export default DashboardPage

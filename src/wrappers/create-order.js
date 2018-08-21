@@ -7,10 +7,9 @@ import axios from 'axios'
 import { notifySuccess, notifyError } from '../actions'
 import { CreateOrder } from '../components/create-order'
 import { LoadingMessage } from '../components/interface'
+import productsSelector from '../selectors/products'
 
-import { PLACE_ORDER_URL } from '../utils/constants'
-
-import Validators from '../helpers/validators'
+import { URL_PLACE_ORDER } from '../utils/constants'
 
 class CreateOrderWrapper extends React.Component {
 
@@ -18,9 +17,9 @@ class CreateOrderWrapper extends React.Component {
 
   render = () => {
 
-    const { products, categories } = this.props
+    const { products, categories, customPrices } = this.props
 
-    if(!isLoaded(products) || !isLoaded(categories))  {
+    if(!isLoaded(products) || !isLoaded(categories) || !isLoaded(customPrices) )  {
       return <LoadingMessage />
     }
 
@@ -29,6 +28,7 @@ class CreateOrderWrapper extends React.Component {
               products={_.orderBy(this.props.products, ['label'], ['asc'])}
               categories={this.props.categories}
               processing={this.state.processing}
+              customPrices={customPrices}
            />)
   }
 
@@ -43,7 +43,7 @@ class CreateOrderWrapper extends React.Component {
     this.setState({ processing: true })
 
     // Will place remote order
-    const response = await axios.post(PLACE_ORDER_URL, order).catch(({response: { data }}) => this.props.notifyError(data.error) )
+    const response = await axios.post(URL_PLACE_ORDER, order).catch(({response: { data }}) => this.props.notifyError('Por favor insira créditos.', 'Saldo insuficiente') )
 
     if(response.data && !response.data.error) {
       this.props.notifySuccess(response.data.message)
@@ -55,8 +55,9 @@ class CreateOrderWrapper extends React.Component {
   }
 }
 
-const mapStateToProps = ({ firebase: { data, auth } }) =>  {
-  return { balance: data.balance, auth, products: data.products, categories: data.categories }
+const mapStateToProps = (state, props) =>  {
+  const { firebase: { data, auth } } = state
+  return { auth, products: productsSelector(state, props), categories: data.categories, customPrices: data.customPrices }
 }
 
 const firebaseData = (props, store) =>  {
@@ -64,7 +65,7 @@ const firebaseData = (props, store) =>  {
   const uid = store.getState().firebase.auth.uid
 
   return [
-    { path: `/userData/${uid}/balance`, storeAs: 'balance' },
+    { path: `/customPrices/${uid}`, storeAs: 'customPrices' },
     '/products', '/categories'
   ]
 }

@@ -82,7 +82,7 @@ class UploadBankTransferReceipt extends Component {
 
   render()  {
 
-    const { fileUploadPending, uploadedFile } = this.state
+    const { fileUploadPending } = this.state
     const { processing } = this.props
 
     return (

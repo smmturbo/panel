@@ -12,12 +12,16 @@ class OrderListItem extends React.PureComponent {
 
     return (
       <tr>
-        <td><small>{order.id}</small></td>
-        <td>{ this._renderDate() }</td>
+        <td>
+            <small><a href="javascript:;" onClick={() => alert(order.id)}>Ver ID</a></small>
+            <br/>
+            <small>{ this._renderDate() }</small>
+        </td>
         <td>{order.product.label}</td>
         <td>{order.panelOrder.quantity}</td>
         <td>{ this._renderTarget() }</td>
-        <td>R${order.amount}</td>
+        <td>{ order.panelOrder.startCount || '-' }</td>
+        <td>R${order.charge}</td>
         <td>{ this._renderOrderStatus() }</td>
       </tr>
     )

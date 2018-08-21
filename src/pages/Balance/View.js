@@ -34,4 +34,4 @@ function mapStateToProps({balance}) {
 //ViewBalancePage = firebaseConnect(firebaseData)(ViewBalancePage)
 ViewBalancePage = connect(mapStateToProps)(ViewBalancePage)
 
-export { ViewBalancePage }
+export default ViewBalancePage

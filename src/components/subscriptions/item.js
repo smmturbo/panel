@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import moment from 'moment'
 
 import systemData from '../../utils/systemData'
@@ -20,7 +19,7 @@ class SubscriptionListItem extends React.PureComponent {
         <td>{subscription.panelOrder.quantity}</td>
         <td>{ this._renderTarget() }</td>
 
-        <td>R${subscription.amount}</td>
+        <td>R${subscription.charge}</td>
         <td>{ this._renderSubscriptionStatus() }</td>
         <td>&nbsp;</td>
       </tr>

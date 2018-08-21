@@ -78,15 +78,7 @@ class AppNav extends Component {
 
         <NavbarToggler onClick={this.toggle} />
 
-        <Collapse isOpen={this.state.isOpen}
-
-          onEnter={(k) => console.log('enter', {k} )}
-          onEntering={(k) => console.log('entering', {k} )}
-          onEntered={(k) => console.log('entered', {k} )}
-
-          onExit={(k) => console.log('exit', {k} )}
-
-          navbar>
+        <Collapse isOpen={this.state.isOpen} navbar>
 
           <Nav navbar>
             <NavItem>
@@ -99,6 +91,14 @@ class AppNav extends Component {
 
             <NavItem>
               <NavLink to="/subscriptions" tag={RouterNavLink} onClick={this.close} >Assinaturas</NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink to="/catalog" tag={RouterNavLink} onClick={this.close} >Preços & Serviços</NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink to="/account/api" tag={RouterNavLink} onClick={this.close} >API</NavLink>
             </NavItem>
 
           </Nav>
@@ -122,7 +122,6 @@ class AppNav extends Component {
               </DropdownToggle>
               <DropdownMenu >
                 <DropdownItem tag={RouterNavLink} to="/account" onClick={this.close} >Conta</DropdownItem>
-                <DropdownItem tag={RouterNavLink}  to="/support" onClick={this.close} >Suporte</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem tag={RouterNavLink}  to="/terms" onClick={this.close} >Termos de Uso</DropdownItem>
                 <DropdownItem divider />

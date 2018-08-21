@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source" : "/api/v1",
+        "function" : "apiV1"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

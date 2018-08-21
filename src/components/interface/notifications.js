@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { Alert } from 'reactstrap'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 import { deleteNotification, clearNotifications } from '../../actions'

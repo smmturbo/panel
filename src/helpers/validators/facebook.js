@@ -1,28 +1,28 @@
-const validateFacebookPostLink = (value) =>  {
-
+const FacebookPostLink = (value) =>  {
+  return { error: false, value }
 }
 
 
-const validateFacebookPageLink = (value) => {
-
+const FacebookPageLink = (value) => {
+  return { error: false, value }
 }
 
-const validateFacebookEventLink = (value) =>  {
-
+const FacebookEventLink = (value) =>  {
+  return { error: false, value }
 }
 
-const validateFacebookGroupLink = (value) =>  {
-
+const FacebookGroupLink = (value) =>  {
+  return { error: false, value }
 }
 
-const validateFacebookProfileLink = (value) =>  {
-
+const FacebookProfileLink = (value) =>  {
+  return { error: false, value }
 }
 
 export default {
-  validateFacebookPostLink,
-  validateFacebookPageLink,
-  validateFacebookEventLink,
-  validateFacebookGroupLink,
-  validateFacebookProfileLink
+  FacebookPostLink,
+  FacebookPageLink,
+  FacebookEventLink,
+  FacebookGroupLink,
+  FacebookProfileLink
 }

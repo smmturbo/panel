@@ -1,3 +1,0 @@
-const registerPayment = ({firebase, values}) => {
-  
-}

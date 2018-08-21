@@ -2,15 +2,13 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 //import axios from 'axios'
 
-import { PageHeader, LoadingMessage, PageToolbar  } from '../../components/interface'
+import { PageHeader, PageToolbar  } from '../../components/interface'
 import { SubscriptionStatusFilter } from '../../components/subscriptions'
 import { SubscriptionsWrapper } from '../../wrappers'
 
-import systemData from "../../utils/systemData"
-
 class SubscriptionsPage extends React.Component {
 
-  state = { status: 'pending' }
+  state = { status: 'active' }
 
   render()  {
 
@@ -36,10 +34,6 @@ class SubscriptionsPage extends React.Component {
   _helmet() {
     return <Helmet><title>Gerenciamento de assinaturas - PainelAS</title></Helmet>
   }
-
-  // componentDidMount() {
-  //   axios.get('https://us-central1-famaja-pagamento.cloudfunctions.net/testCheckordersStatuses').catch(error => console.log(error))
-  // }
 }
 
-export { SubscriptionsPage }
+export default SubscriptionsPage

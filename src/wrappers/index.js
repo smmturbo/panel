@@ -1,5 +1,7 @@
+export * from './api-key'
 export * from './balance-transactions'
 export * from './bank-accounts'
 export * from './create-order'
 export * from './orders'
+export * from './products'
 export * from './subscriptions'

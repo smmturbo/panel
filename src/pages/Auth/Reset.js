@@ -92,4 +92,4 @@ function validate(values) {
 ResetPasswordPage = connect(null, { notifyError })(ResetPasswordPage)
 ResetPasswordPage = compose(withFirebase, reduxForm({validate, form: 'AuthLoginForm'}) )(ResetPasswordPage)
 
-export { ResetPasswordPage }
+export default ResetPasswordPage

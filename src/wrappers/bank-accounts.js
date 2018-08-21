@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
-import _ from 'lodash'
 
-import { PageHeader, LoadingMessage, EmptyList  } from '../components/interface'
+import { LoadingMessage, EmptyList  } from '../components/interface'
 import { BankAccountList } from '../components/bank-accounts'
 import { UploadBankTransferReceipt } from '../components/balance-transactions'
 import { notifySuccess } from '../actions'
@@ -37,12 +36,8 @@ class BankAccountsWrapper extends React.Component {
 
     this.setState({processing: true})
 
-    //console.log({uploadedFile})
-
     // uploadFiles(storagePath, files, dbPath)
     const uploadTask = await firebase.uploadFile(storagePath, uploadedFile)
-
-    console.log('UP TASK SNAP:', { uploadTask,  uploadTaskSnapshot: uploadTask.uploadTaskSnapshot })
 
     // Creates a new Receipt
     const receiptRef = firebase.ref(`/userData/${auth.uid}/receipts`).push()

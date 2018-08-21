@@ -25,15 +25,19 @@ export { SubscriptionStatusFilter }
 
 const statuses = [
   {
-    status: 'processing',
-    label: 'Aguardando'
+    status: 'active',
+    label: 'Ativas'
+  },
+  {
+    status: 'paused',
+    label: 'Pausadas'
   },
   {
     status: 'completed',
-    label: 'Concluídos'
+    label: 'Concluídas'
   },
   {
     status: 'cancelled',
-    label: 'Cancelados'
+    label: 'Canceladas'
   }
 ]

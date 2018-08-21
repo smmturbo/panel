@@ -1,11 +1,21 @@
-const validateInstagramProfile = (value) => {
-  return value
+const InstagramProfile = (value) => {
+
+  // Detect @
+  if(value.search(/@/) >= 0)   {
+    value = removeAt(value)
+  }
+
+  return { error: false, value }
 }
 
-const validateInstagramProfileLink = (value) => {
+const InstagramProfileLink = (value) => {
+
+  if(!value)  {
+    return { error: true, message: 'Link informado é inválido.' }
+  }
 
   if(value.search(/instagram.com\/p\//) >= 0)  {
-    return false
+    return { error: true, message: 'Link informado é inválido.' }
   }
 
   // Detect @
@@ -14,26 +24,30 @@ const validateInstagramProfileLink = (value) => {
   }
 
   // Detect if has full Instagram URL
-  if(value.search(/instagram.com/) > 0)  {
+  if( value.search(/instagram.com/) < 0 )  {
     value = insertFullUrl(value)
   }
 
-  return value
+  return { error: false, value }
 }
 
-const validateInstagramPostLink = (value) =>  {
+const InstagramPostLink = (value) =>  {
 
-  if(value.search(/instagram.com\/p\//) < 0)  {
-    return false
+  if(!value)  {
+    return { error: true, message: 'Link informado é inválido.' }
   }
 
-  return value
+  if(value.search(/instagram.com\/p\//) < 0)  {
+    return { error: true, message: 'Link informado é inválido' }
+  }
+
+  return { error: false, value }
 }
 
 export default {
-  validateInstagramProfile,
-  validateInstagramProfileLink,
-  validateInstagramPostLink
+  InstagramProfile,
+  InstagramProfileLink,
+  InstagramPostLink
 }
 
 

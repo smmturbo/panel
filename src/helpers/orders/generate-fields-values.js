@@ -3,10 +3,12 @@ import _ from 'lodash'
 const generateFieldsValues = (values) =>  {
 
   const data = {}
-  delete values.quantity
 
-  _.map(values, (value, key) => {
+  _.forEach(values, (value, key) => {
+
+    if(key !== 'quantity')  {
       data[key] = value
+    }
   })
 
   return data

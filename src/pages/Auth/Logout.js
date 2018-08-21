@@ -15,4 +15,4 @@ class LogoutPage extends Component {
 
 LogoutPage = withFirebase(LogoutPage)
 
-export { LogoutPage }
+export default LogoutPage

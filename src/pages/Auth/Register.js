@@ -13,6 +13,6 @@ const RegisterPage = () => {
   )
 }
 
-export { RegisterPage }
+export default RegisterPage
 
 const title = "Cadastro - AumentarSeguidores.com"
