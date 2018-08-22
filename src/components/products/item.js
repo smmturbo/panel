@@ -1,5 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
+import { FormattedMessage } from 'react-intl'
 
 import { ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap'
 
@@ -11,8 +12,8 @@ class ProductListItem extends React.PureComponent {
 
     return (<ListGroupItem>
               <ListGroupItemHeading>{product.label}</ListGroupItemHeading>
-              <ListGroupItemText>Preço: R${product.price} / 1000</ListGroupItemText>
-              <ListGroupItemText>ID: {product.id}</ListGroupItemText>
+              <ListGroupItemText><FormattedMessage id="products.price" />: R${product.price} / 1000</ListGroupItemText>
+              <ListGroupItemText><FormattedMessage id="products.id" />: {product.id}</ListGroupItemText>
             </ListGroupItem>)
   }
 }

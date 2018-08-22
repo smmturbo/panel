@@ -1,5 +1,5 @@
 import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
-import { PATH_HOME } from './constants'
+import { PATH_HOME } from '../data/constants'
 import { LoadingMessage } from '../components/interface'
 import locationHelperBuilder from 'redux-auth-wrapper/history4/locationHelper'
 

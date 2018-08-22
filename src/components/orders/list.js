@@ -1,6 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
-//import { Table } from 'reactstrap'
+import { FormattedMessage } from 'react-intl'
 
 import { OrderListItem } from './'
 
@@ -16,13 +16,13 @@ class OrderList extends React.PureComponent {
                 <table className="table" >
                   <thead>
                   <tr>
-                    <th>ID/Data</th>
-                    <th>Serviço</th>
-                    <th>Quant.</th>
-                    <th>Perfil/Link</th>
-                    <th>Cont. Inicial</th>
-                    <th>Valor</th>
-                    <th>Status</th>
+                    <th><FormattedMessage id="order_list.headers.id_and_date" /></th>
+                    <th><FormattedMessage id="order_list.headers.service" /></th>
+                    <th><FormattedMessage id="order_list.headers.quantity" /></th>
+                    <th><FormattedMessage id="order_list.headers.profile_link" /></th>
+                    <th><FormattedMessage id="order_list.headers.initial_count" /></th>
+                    <th><FormattedMessage id="order_list.headers.amount" /></th>
+                    <th><FormattedMessage id="order_list.headers.status" /></th>
                   </tr>
                   </thead>
                   <tbody>

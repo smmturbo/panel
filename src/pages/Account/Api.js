@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { FormattedMessage } from 'react-intl'
 
-import { PageHeader, PageToolbar, PS } from '../../components/interface'
+import { PageHeader, PageToolbar, LinkList, LinkListItem } from '../../components/interface'
 import { ApiKeyWrapper } from '../../wrappers'
 
 class ApiKeyPage extends Component {
@@ -10,21 +11,18 @@ class ApiKeyPage extends Component {
     return (
       <div>
 
-        <PageToolbar left={[{label: 'Voltar', to: `/`}]} />
+        <PageToolbar left={[{label: <FormattedMessage id="page.account.api.back" />, to: `/`}]} />
 
         <PageHeader
-          title="Chave API"
-          subtitle="Faça requisições para nossa API para automatizar seus pedidos."
+          title={<FormattedMessage id="page.account.api.title" />}
+          subtitle={<FormattedMessage id="page.account.api.subtitle" />}
         />
 
         <ApiKeyWrapper />
 
-        <PS>Instruções de Uso</PS>
-
-        <p>Com nossa API você pode inserir e verificar status de pedidos.</p>
-
-        <h4>Adicionar um pedido</h4>
-        <p>Requisição para..</p>
+        <LinkList>
+          <LinkListItem to="/apidocs" ><FormattedMessage id="page.account.api.api_docs" /></LinkListItem>
+        </LinkList>
 
       </div>
     )

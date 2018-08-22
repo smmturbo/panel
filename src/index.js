@@ -1,21 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
 import { Provider } from 'react-redux'
-//import { PersistGate } from 'redux-persist/integration/react'
 import { store } from './store'
-
 import registerServiceWorker from './registerServiceWorker'
-
 import 'bootstrap/dist/css/bootstrap.css';
-
 import App from './App'
+//import { PersistGate } from 'redux-persist/integration/react'
+
+import { IntlProvider } from './languages/wrapper'
 
 ReactDOM.render(
-
-  <Provider store={ store } >
-    <App />
-  </Provider>
+  <IntlProvider >
+    <Provider store={ store } >
+      <App />
+    </Provider>
+  </IntlProvider>
 
 , document.getElementById('root'));
 registerServiceWorker()

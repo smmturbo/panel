@@ -1,6 +1,7 @@
 import React from 'react'
 import { ButtonGroup, Button } from 'reactstrap'
 import _ from 'lodash'
+import { FormattedMessage } from 'react-intl'
 
 class SubscriptionStatusFilter extends React.PureComponent {
 
@@ -26,18 +27,18 @@ export { SubscriptionStatusFilter }
 const statuses = [
   {
     status: 'active',
-    label: 'Ativas'
+    label: <FormattedMessage id="subscription_list.status_filter.active" />
   },
   {
     status: 'paused',
-    label: 'Pausadas'
+    label: <FormattedMessage id="subscription_list.status_filter.paused" />
   },
   {
     status: 'completed',
-    label: 'Concluídas'
+    label: <FormattedMessage id="subscription_list.status_filter.completed" />
   },
   {
-    status: 'cancelled',
-    label: 'Canceladas'
+    status: 'canceled',
+    label: <FormattedMessage id="subscription_list.status_filter.canceled" />
   }
 ]

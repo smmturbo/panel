@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-//import axios from 'axios'
+import { FormattedMessage } from 'react-intl'
 
 import { PageHeader, PageToolbar  } from '../../components/interface'
 import { OrderStatusFilter } from '../../components/orders'
@@ -13,13 +13,10 @@ class OrdersPage extends React.Component {
   render()  {
 
     return (
-      <div className="container" >
-        <PageHeader title="Gerenciamento de pedidos" />
-
-        <PageToolbar left={[ {label: 'Novo pedido', to: `/orders/add`}] } />
-
+      <div>
+        <PageToolbar left={[ {label: <FormattedMessage id="page.orders.toolbar.create" />, to: `/orders/add`}] } />
+        <PageHeader title={<FormattedMessage id="page.orders.title" />} />
         <OrderStatusFilter status={this.state.status} handleClick={this._selectStatus} />
-
         <OrdersWrapper status={this.state.status} />
 
         { this._helmet() }
@@ -32,7 +29,7 @@ class OrdersPage extends React.Component {
   }
 
   _helmet() {
-    return <Helmet><title>Gerenciamento de pedidos - PainelAS</title></Helmet>
+    return <Helmet><title>Orders/ Pedidos - PainelAS</title></Helmet>
   }
 }
 

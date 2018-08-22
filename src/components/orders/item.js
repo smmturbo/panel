@@ -1,7 +1,8 @@
 import React from 'react'
 import moment from 'moment'
+import { FormattedMessage } from 'react-intl'
 
-import systemData from '../../utils/systemData'
+import systemData from '../../data/system'
 const statuses = systemData.orderStatuses
 
 class OrderListItem extends React.PureComponent {
@@ -13,7 +14,7 @@ class OrderListItem extends React.PureComponent {
     return (
       <tr>
         <td>
-            <small><a href="javascript:;" onClick={() => alert(order.id)}>Ver ID</a></small>
+            <small><a href="javascript:;" onClick={() => alert(order.id)}><FormattedMessage id="order_list.get_id" /></a></small>
             <br/>
             <small>{ this._renderDate() }</small>
         </td>
@@ -51,7 +52,7 @@ class OrderListItem extends React.PureComponent {
         textColor = 'text-success'
       break
 
-      case statuses.cancelled:
+      case statuses.canceled:
         textColor = 'text-danger'
       break
 

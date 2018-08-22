@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { isLoaded } from 'react-redux-firebase'
 import { ListGroup, ListGroupItem } from 'reactstrap'
 import { Link } from 'react-router-dom'
+import { FormattedMessage } from 'react-intl'
 
 import { PageHeader, LinkList, LinkListItem, LoadingMessage } from '../../components/interface'
 
@@ -18,29 +19,31 @@ class ViewAccountPage extends Component {
 
     return (
       <div>
-        <PageHeader title="Minha Conta" />
+        <PageHeader title={<FormattedMessage id="page.account.view.title" />} />
 
         <ListGroup>
           <ListGroupItem>
-            <small>Email</small>
+            <small><FormattedMessage id="page.account.view.email" /></small>
             <h4>{profile.email}</h4>
           </ListGroupItem>
 
           <ListGroupItem>
-            <small>Nome</small>
+            <small><FormattedMessage id="page.account.view.name" /></small>
             <h4>{profile.name}</h4>
           </ListGroupItem>
 
+          <FormattedMessage id="page.account.view.phone" />
+
           <ListGroupItem>
-            <small>Senha</small>
-            <h5><Link to="/auth/reset" >Redefinir senha</Link></h5>
+            <small><FormattedMessage id="page.account.view.password" /></small>
+            <h5><Link to="/auth/reset" ><FormattedMessage id="page.account.view.reset_password" /></Link></h5>
           </ListGroupItem>
         </ListGroup>
 
         <LinkList>
-          <LinkListItem to="/orders" >Histórico de pedidos</LinkListItem>
-          <LinkListItem to="/balance" >Histórico de recargas</LinkListItem>
-          <LinkListItem to="/support" >Suporte &amp; tickets</LinkListItem>
+          <LinkListItem to="/orders" ><FormattedMessage id="page.account.view.order_history" /></LinkListItem>
+          <LinkListItem to="/balance" ><FormattedMessage id="page.account.view.balance_history" /></LinkListItem>
+          <LinkListItem to="/support" ><FormattedMessage id="page.account.view.support" /></LinkListItem>
         </LinkList>
       </div>
     )

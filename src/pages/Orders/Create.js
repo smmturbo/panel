@@ -1,9 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { UncontrolledAlert } from 'reactstrap'
+import { FormattedMessage } from 'react-intl'
 
 import { PageHeader, Whatsapp } from '../../components/interface'
 import { CreateOrderWrapper } from '../../wrappers'
+
+import { PHONE_SUPPORT_PHONE } from '../../data/constants'
 
 class CreateOrderPage extends React.Component {
 
@@ -11,24 +14,20 @@ class CreateOrderPage extends React.Component {
 
     return (
       <div className="container" >
-        <PageHeader title="Novo pedido" />
+        <PageHeader title={<FormattedMessage id="page.orders.create.title" />} />
 
         <UncontrolledAlert>
-          <h6>Problemas ou dúdivas?</h6>
-          <Whatsapp number="21969534028" />
+          <h6><FormattedMessage id="page.orders.create.alert.problems_or_questions" /></h6>
+          <Whatsapp number={PHONE_SUPPORT_PHONE} />
         </UncontrolledAlert>
 
         <UncontrolledAlert color="warning" >
-          <h6>ATENÇÃO:</h6>
+          <h6><FormattedMessage id="page.orders.create.warnings.title" /></h6>
 
           <ul>
-            <li><b>O perfil não pode estar em modo privado.</b></li>
-            
-            <li>Não realize a compra do mesmo serviço
-            para o mesmo link caso ainda possua um pedido em andamento.</li>
-
-	          <li>Confira atentamente a URL completa e a Quantidade. Uma vez iniciada
-            a entrega, não é possível cancelar o pedido.</li>
+            <li><b><FormattedMessage id="page.orders.create.warnings.private_profile" /></b></li>
+            <li><FormattedMessage id="page.orders.create.warnings.no_double_order" /></li>
+	          <li><FormattedMessage id="page.orders.create.warnings.attention_to_data" /></li>
           </ul>
         </UncontrolledAlert>
 
@@ -44,7 +43,7 @@ class CreateOrderPage extends React.Component {
   }
 
   _helmet() {
-    return <Helmet><title>Novo Pedido - PainelAS</title></Helmet>
+    return <Helmet><title>New order / Novo pedido - PainelAS</title></Helmet>
   }
 }
 

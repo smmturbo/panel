@@ -9,7 +9,7 @@ import { CreateOrder } from '../components/create-order'
 import { LoadingMessage } from '../components/interface'
 import productsSelector from '../selectors/products'
 
-import { URL_PLACE_ORDER } from '../utils/constants'
+import { URL_PLACE_ORDER } from '../data/constants'
 
 class CreateOrderWrapper extends React.Component {
 

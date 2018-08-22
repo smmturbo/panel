@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Card, CardBody, CardHeader } from 'reactstrap'
+import { FormattedMessage } from 'react-intl'
 
 import { PageHeader, PageToolbar, PS } from '../../components/interface'
 import { BankAccountsWrapper } from '../../wrappers'
-import { TEMP_ADD_BALANCE_PRODUCT_URL } from '../../utils/constants'
+import { TEMP_ADD_BALANCE_PRODUCT_URL } from '../../data/constants'
 
 class AddBalancePage extends Component {
 
@@ -11,26 +12,25 @@ class AddBalancePage extends Component {
 
     return (
       <div>
+        <PageToolbar left={[{label: <FormattedMessage id="page.balance.add.back" />, to: `/`}]} />
 
         <PageHeader
-          title="Adicionar créditos"
-          subtitle="Escolha uma conta bancária e, após transferir, faça upload do comprovante para efetuarmos a liberação."
+          title={<FormattedMessage id="page.balance.add.title" />}
+          subtitle={<FormattedMessage id="page.balance.add.subtitle" />}
         />
 
-        <PageToolbar left={[{label: 'Voltar', to: `/`}]} />
-
-        <PS>PagSeguro / Mercado Pago</PS>
+        <PS><FormattedMessage id="page.balance.add.section_title.brazil_pagseguro" /></PS>
 
         <Card>
-          <CardHeader>Cartão de Crédito e Boleto Bancário</CardHeader>
+          <CardHeader><FormattedMessage id="page.balance.add.brazil_credit_card_boleto" /></CardHeader>
           <CardBody>
             <a href={TEMP_ADD_BALANCE_PRODUCT_URL} target="_blank" className="btn btn-primary" >
-              Pagar via PagSeguro e Mercado Pago
+               <FormattedMessage id="page.balance.add.brazil_pay_now_pagseguro" />
             </a>
           </CardBody>
         </Card>
 
-        <PS>Transferência Bancária</PS>
+        <PS><FormattedMessage id="page.balance.add.section_title.brazil_bank_transfer" /></PS>
 
         <BankAccountsWrapper />
 

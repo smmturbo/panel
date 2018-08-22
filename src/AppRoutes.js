@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { AppFooter, AppHeader } from './components/layout'
 import { AppNotifications } from './components/interface'
 import { UserIsAuthenticated, UserIsNotAuthenticated } from './utils/authorization-layer'
-import { URL_DEFAULT_SITE_URL } from './utils/constants'
+import { URL_DEFAULT_SITE_URL } from './data/constants'
 import asyncComponent from "./components/AsyncComponent"
 
 const LogoutPage = asyncComponent(() => import("./pages/Auth/Logout"))

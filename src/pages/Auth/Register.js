@@ -8,11 +8,11 @@ const RegisterPage = () => {
   return (
       <div>
         <AuthRegister />
-        <Helmet><title>{title}</title><meta property="og:title" content={title} /><meta property="og:url" content={`https://mercadomaritimo.com.br/login`} /></Helmet>
+        <Helmet><title>{title}</title><meta property="og:title" content={title} /><meta property="og:url" content={`https://painel.AumentarSeguidores.com.br/register`} /></Helmet>
       </div>
   )
 }
 
 export default RegisterPage
 
-const title = "Cadastro - AumentarSeguidores.com"
+const title = "Registration / Cadastro - AumentarSeguidores.com"

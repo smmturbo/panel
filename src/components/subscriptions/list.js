@@ -1,6 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
-//import { Table } from 'reactstrap'
+import { FormattedMessage } from 'react-intl'
 
 import { SubscriptionListItem } from './'
 
@@ -16,13 +16,13 @@ class SubscriptionList extends React.PureComponent {
                 <table className="table" >
                   <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Data</th>
-                    <th>Serviço</th>
-                    <th>Quantidade</th>
-                    <th>Perfil/Link</th>
-                    <th>Valor</th>
-                    <th>Status</th>
+                    <th><FormattedMessage id="order_list.headers.id" /></th>
+                    <th><FormattedMessage id="order_list.headers.date" /></th>
+                    <th><FormattedMessage id="order_list.headers.service" /></th>
+                    <th><FormattedMessage id="order_list.headers.quantity" /></th>
+                    <th><FormattedMessage id="order_list.headers.profile_link" /></th>
+                    <th><FormattedMessage id="order_list.headers.amount" /></th>
+                    <th><FormattedMessage id="order_list.headers.status" /></th>
                     <th>&nbsp;</th>
                   </tr>
                   </thead>

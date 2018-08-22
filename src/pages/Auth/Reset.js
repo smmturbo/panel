@@ -6,6 +6,7 @@ import { Button, Card, CardBody } from 'reactstrap'
 import { compose } from 'recompose'
 import { withFirebase } from 'react-redux-firebase'
 import { Helmet } from 'react-helmet'
+import { FormattedMessage } from 'react-intl'
 
 import { notifyError } from '../../actions'
 import { FormInput, PageHeader } from '../../components/interface'
@@ -30,8 +31,8 @@ class ResetPasswordPage extends Component {
     return (
         <div>
           <PageHeader
-            title="Redefinir senha"
-            subtitle="Informe seu endere&ccedil;o de e-mail e lhe enviaremos um link para redefinir a senha de acesso."
+            title={<FormattedMessage id="page.auth.reset_password.title" />}
+            subtitle={<FormattedMessage id="page.auth.reset_password.subtitle" />}
           />
 
           <Card>
@@ -47,13 +48,13 @@ class ResetPasswordPage extends Component {
                 />
 
                 <div className="my-3">
-                  <Button color="primary" >Confirmar</Button>
+                  <Button color="primary" ><FormattedMessage id="page.auth.reset_password.confirm" /></Button>
                 </div>
 
                 <hr/>
 
                 <p className="text-center" >
-                  <Link to="/login" >Retornar</Link>
+                  <Link to="/login" ><FormattedMessage id="page.auth.reset_password.back" /></Link>
                 </p>
 
               </form>
@@ -66,11 +67,11 @@ class ResetPasswordPage extends Component {
   }
 
   _helmet()  {
-    const title = `Recuperação de senha - AumentarSeguidores.com`
+    const title = `Recover password / Recuperação de senha - AumentarSeguidores.com`
     return (<Helmet>
               <title>{title}</title>
               <meta property="og:title" content={title} />
-              <meta property="og:url" content={`https://famaja.com`} />
+              <meta property="og:url" content={`https://painel.AumentarSeguidores.com.br`} />
             </Helmet>)
   }
 }

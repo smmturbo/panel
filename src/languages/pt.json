@@ -1,0 +1,140 @@
+{
+  "menu.auth": "Login / Cadastro",
+  "menu.support": "Suporte",
+  "menu.new_order" : "Novo Pedido",
+  "menu.orders" : "Pedidos",
+  "menu.subscriptions" : "Assinaturas",
+  "menu.prices_services" : "Preços & Serviços",
+  "menu.api" : "API",
+  "menu.auth" : "Entrar / Cadastrar",
+  "menu.add_balance" : "Inserir créditos",
+  "menu.account" : "Conta",
+  "menu.tos" : "Termos de Uso",
+  "menu.logout" : "Sair",
+
+  "api_key.no_key" : "Você não tem uma Chave API.",
+  "api_key.api_key" : "Chave API",
+  "api_key.url" : "URL",
+  "api_key.create_key" : "Criar Chave API",
+
+  "auth.login_button" : "Entrar",
+  "auth.recover_password" : "Recuperar senha",
+  "auth.password_placeholder" : "Senha (mín. 6 chars)",
+  "auth.personal_info_privacy_message" : "As informações fornecidas serão mantidas em total sigilo e apenas utilizamos para prestar um melhor suporte.",
+  "auth.register_button" : "Cadastrar",
+
+  "auth.no_account_text" : "Não tem conta?",
+  "auth.no_account_button" : "Cadastro gratuito",
+  "auth.has_account_text" : "Já tem conta?",
+  "auth.has_account_button" : "Fazer login",
+
+  "general.date" : "Data",
+  "general.amount" : "Valor (R$)",
+
+  "receipts.button_send_file" : "Enviar arquivo",
+  "receipts.click_to_select_file" : "Clique para selecionar o arquivo",
+  "receipts.title_insert_receipt" : "Inserir comprovante de transferência",
+
+  "bank_accounts.owner" : "Titular",
+  "bank_accounts.branch" : "Agência",
+  "bank_accounts.account_number" : "Conta",
+  "bank_accounts.extra" : "Extra",
+
+  "create_order.button_create_order" : "Enviar pedido",
+  "create_order.per_thousand_units" : "por 1000 unidades",
+  "create_order.back" : "Voltar",
+  "create_order.list_title_buying" : "Comprando",
+
+  "interface.empty_list.message" : "Nenhum resultado encontrado",
+  "interface.loading_message.message" : "Carregando...",
+
+  "footer.copy_site_name" : "PainelAS - AumentarSeguidores.com",
+
+  "order_list.get_id" : "Ver ID",
+  "order_list.headers.id_and_date" : "ID/Data",
+  "order_list.headers.service" : "Serviço",
+  "order_list.headers.quantity" : "Quant.",
+  "order_list.headers.profile_link" : "Perfil/Link",
+  "order_list.headers.amount" : "Valor",
+  "order_list.headers.status" : "Status",
+  "order_list.headers.initial_count" : "Cont. Inicial",
+
+  "order_list.status_filter.processing" : "Processando",
+  "order_list.status_filter.pending" : "Aguardando",
+  "order_list.status_filter.completed" : "Concluídos",
+  "order_list.status_filter.canceled" : "Cancelados/Erro",
+
+  "subscription_list.id" : "ID",
+  "subscription_list.headers.date" : "Data",
+  "subscription_list.headers.service" : "Serviço",
+  "subscription_list.headers.quantity" : "Quant.",
+  "subscription_list.headers.profile_link" : "Perfil/Link",
+  "subscription_list.headers.amount" : "Valor",
+  "subscription_list.headers.status" : "Status",
+
+  "subscription_list.status_filter.active" : "Processando",
+  "subscription_list.status_filter.paused" : "Aguardando",
+  "subscription_list.status_filter.completed" : "Concluídos",
+  "subscription_list.status_filter.canceled" : "Cancelados/Erro",
+
+  "products.title.attention" : "Atenção",
+  "products.price" : "Preço",
+  "products.id" : "ID",
+
+  "page.account.api.title" : "Chave API",
+  "page.account.api.subtitle" : "Faça requisições para nossa API para automatizar seus pedidos.",
+  "page.account.api.api_docs" : "Documentação da API",
+  "page.account.api.back" : "Documentação da API",
+
+  "page.account.view.title" : "Minha conta",
+  "page.account.view.email" : "E-mail",
+  "page.account.view.name" : "Nome",
+  "page.account.view.phone" : "Telefone",
+
+  "page.account.view.password" : "Senha",
+  "page.account.view.reset_password" : "Redefinir senha",
+  "page.account.view.order_history" : "Histórico de pedidos",
+  "page.account.view.balance_history" : "Histórico de recargas",
+  "page.account.view.support" : "Suporte",
+
+  "page.auth.reset_password.title" : "Recuperar senha",
+  "page.auth.reset_password.subtitle" : "Informe seu endereço de e-mail e lhe enviaremos um link para redefinir a senha de acesso.",
+  "page.auth.reset_password.confirm" : "Confirmar",
+  "page.auth.reset_password.back" : "Voltar",
+
+  "page.balance.add.section_title.brazil_pagseguro" : "PagSeguro / Mercado Pago",
+  "page.balance.add.brazil_credit_card_boleto" : "Cartão de Crédito e Boleto Bancário",
+  "page.balance.add.brazil_pay_now_pagseguro": "Pagar com PagSeguro ou Mercado Pago",
+  "page.balance.add.section_title.brazil_bank_transfer" : "Transferência Bancária",
+  "page.balance.add.back" : "Voltar",
+
+  "page.balance.add.title" : "Adicionar créditos",
+  "page.balance.add.subtitle" : "Escolha uma conta bancária e, após transferir, faça upload do comprovante para efetuarmos a liberação.",
+
+  "page.balance.view.title" : "Saldo de créditos",
+  "page.balance.view.toolbar.add" : "Adicionar",
+  "page.balance.view.toolbar.back" : "Voltar",
+  "page.balance.view.section_title.balance_history" : "Histórico de transações",
+
+  "page.extras.support.title" : "Ajuda & Suporte",
+  "page.extras.support.if_you_have_problems" : "Se encontrou algum problema, entre em contato conosco.",
+  "page.extras.support.faq" : "Perguntas frequentes",
+  "page.extras.support.email" : "E-mail",
+
+  "page.orders.create.title" : "Novo pedido",
+  "page.orders.create.alert.problems_or_questions" : "Problemas ou dúvidas?",
+  "page.orders.create.window_title" : "Novo pedido - PainelAS",
+  "page.orders.create.warnings.title" : "ATENÇÃO",
+  "page.orders.create.warnings.private_profile" : "O perfil não pode estar em modo privado.",
+  "page.orders.create.warnings.no_double_order" : "Não realize a compra do mesmo serviço para o mesmo link caso ainda possua um pedido em andamento.",
+  "page.orders.create.warnings.attention_to_data" : "Confira atentamente a URL completa e a Quantidade. Uma vez iniciada a entrega, não é possível cancelar o pedido.",
+
+  "page.orders.title" : "Pedidos",
+  "page.orders.toolbar.create" : "Novo pedido",
+
+  "page.subscriptions.title" : "Assinaturas",
+  "page.subscriptions.toolbar.create" : "Novo pedido",
+
+  "page.catalog.title" : "Catálogo de serviços",
+  "page.catalog.subtitle" : "Utilize as IDs para efetuar as Chamadas API"
+}

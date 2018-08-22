@@ -1,6 +1,7 @@
 import React from 'react'
 import { ButtonGroup, Button } from 'reactstrap'
 import _ from 'lodash'
+import { FormattedMessage } from 'react-intl'
 
 class OrderStatusFilter extends React.PureComponent {
 
@@ -26,18 +27,18 @@ export { OrderStatusFilter }
 const statuses = [
   {
     status: 'processing',
-    label: 'Processando'
+    label: <FormattedMessage id="order_list.status_filter.processing" />
   },
   {
     status: 'pending',
-    label: 'Aguardando'
+    label: <FormattedMessage id="order_list.status_filter.pending" />
   },
   {
     status: 'completed',
-    label: 'Concluídos'
+    label: <FormattedMessage id="order_list.status_filter.completed" />
   },
   {
-    status: 'cancelled',
-    label: 'Cancelados/Erro'
+    status: 'canceled',
+    label: <FormattedMessage id="order_list.status_filter.canceled" />
   }
 ]

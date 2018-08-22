@@ -16,7 +16,7 @@ class ProductsWrapper extends React.Component {
     }
 
     if(isEmpty(products) ) {
-      return <EmptyList message="Nenhum produto encontrado." />
+      return <EmptyList />
     }
 
     return <ProductList products={products} />

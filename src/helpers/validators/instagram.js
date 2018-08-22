@@ -11,11 +11,11 @@ const InstagramProfile = (value) => {
 const InstagramProfileLink = (value) => {
 
   if(!value)  {
-    return { error: true, message: 'Link informado é inválido.' }
+    return { error: true, message: 'Invalid Link / Link inválido.' }
   }
 
   if(value.search(/instagram.com\/p\//) >= 0)  {
-    return { error: true, message: 'Link informado é inválido.' }
+    return { error: true, message: 'Invalid Link / Link inválido.' }
   }
 
   // Detect @
@@ -34,11 +34,11 @@ const InstagramProfileLink = (value) => {
 const InstagramPostLink = (value) =>  {
 
   if(!value)  {
-    return { error: true, message: 'Link informado é inválido.' }
+    return { error: true, message: 'Invalid Link / Link inválido.' }
   }
 
   if(value.search(/instagram.com\/p\//) < 0)  {
-    return { error: true, message: 'Link informado é inválido' }
+    return { error: true, message: 'Invalid Link / Link inválido.' }
   }
 
   return { error: false, value }

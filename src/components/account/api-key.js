@@ -1,8 +1,9 @@
 import React from 'react'
 import { ListGroupItem, ListGroup, Button, Card, CardBody } from 'reactstrap'
 import { isEmpty } from 'react-redux-firebase'
+import { FormattedMessage } from 'react-intl'
 
-import { URL_API } from '../../utils/constants'
+import { URL_API } from '../../data/constants'
 
 class ApiKey extends React.PureComponent {
 
@@ -13,8 +14,12 @@ class ApiKey extends React.PureComponent {
     if(isEmpty(apiKey) ) {
       return (<Card>
                 <CardBody>
-                  <p className="lead">Você não tem uma Chave API.</p>
-                  <Button onClick={this.props.handleAction} color="success" size="lg" >Criar Chave API</Button>
+                  <p className="lead">
+                    <FormattedMessage id="api_key.no_key" />
+                  </p>
+                  <Button onClick={this.props.handleAction} color="success" size="lg" >
+                    <FormattedMessage id="api_key.create_key" />
+                  </Button>
                 </CardBody>
               </Card>)
     }
@@ -22,10 +27,11 @@ class ApiKey extends React.PureComponent {
     return (<ListGroup>
               <ListGroupItem>
                 Chave API
+                <FormattedMessage id="api_key.api_key" />
                 <h5>{apiKey.id}</h5>
               </ListGroupItem>
               <ListGroupItem>
-                URL
+                <FormattedMessage id="api_key.url" />
                 <h5>{URL_API}</h5>
               </ListGroupItem>
             </ListGroup>)

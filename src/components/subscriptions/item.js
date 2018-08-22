@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-import systemData from '../../utils/systemData'
+import systemData from '../../data/system'
 const statuses = systemData.orderStatuses
 
 class SubscriptionListItem extends React.PureComponent {
@@ -58,7 +58,7 @@ class SubscriptionListItem extends React.PureComponent {
         textColor = 'text-success'
       break
 
-      case statuses.cancelled:
+      case statuses.canceled:
         textColor = 'text-danger'
       break
 

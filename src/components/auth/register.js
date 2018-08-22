@@ -4,6 +4,7 @@ import { Card, CardBody, Button } from 'reactstrap'
 import { compose } from 'recompose'
 import { withFirebase } from 'react-redux-firebase'
 import { connect } from 'react-redux'
+import { FormattedMessage } from 'react-intl'
 
 import { FormInput, PageHeader, LoadingMessage } from '../interface'
 import { notifyError } from '../../actions'
@@ -35,7 +36,7 @@ class AuthRegister extends React.Component {
       this.setState({processing: false })
     }
     else {
-      this.props.notifyError('E-mail não informado ou senhas não batem.')
+      this.props.notifyError('E-mail not provided or passwords do not match.')
       this.setState({processing: false })
     }
   }
@@ -57,31 +58,31 @@ class AuthRegister extends React.Component {
 
                       <Field
                         name="password" label="Senha *" type="password"
-                        placeholder="Senha (mín. 6 caracteres)" component={FormInput}
+                        placeholder="Password/Senha (mín. 6 )" component={FormInput}
                       />
 
                       <Field
                         name="password_repeat" label="Repita a senha" type="password"
-                        placeholder="Repita a senha" component={FormInput}
+                        placeholder="Repeat password" component={FormInput}
                       />
 
                       <Field
                         name="name" label="Nome" type="text"
-                        placeholder="Nome (opcional)" component={FormInput}
+                        placeholder="Name (optional)" component={FormInput}
                       />
 
                       <Field
                         name="phone"
-                        label="Telefone"
+                        label="Phone"
                         type="text"
-                        placeholder="Telefone (opcional)"
+                        placeholder="Phone (optional)"
                         component={FormInput}
                       />
 
-                      <p>As informações fornecidas serão mantidas em total sigilo e apenas utilizamos para prestar um melhor suporte.</p>
+                      <p><FormattedMessage id="auth.personal_info_privacy_message" /></p>
 
                       <div className="my-3 d-flex justify-content-between align-items-center">
-                        <Button color="primary" >Prosseguir</Button>
+                        <Button color="primary" ><FormattedMessage id="auth.register_button" /></Button>
                         { this.state.processing ? <LoadingMessage /> : '' }
                       </div>
 
@@ -96,15 +97,15 @@ function validate(values) {
   const errors = {}
 
   if(!values.email) {
-    errors.email = 'Por favor insira um e-mail'
+    errors.email = 'E-mail is missing'
   }
 
   if(!values.password) {
-    errors.password = 'Por favor insira senha'
+    errors.password = 'Password is missing'
   }
 
   if(!values.password_repeat) {
-    errors.password_repeat = 'Por favor insira senha novamente'
+    errors.password_repeat = 'Repeat password'
   }
 
   return errors

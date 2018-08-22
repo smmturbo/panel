@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 
 import { ProductsWrapper } from '../wrappers'
 import { PageHeader } from '../components/interface'
@@ -8,10 +9,8 @@ class ProductsPage extends React.PureComponent {
   render()  {
 
     return (<div>
-              <PageHeader title="Catálogo de Produtos" subtitle="Utilize as IDs para efetuar as Chamadas API" />
-
+              <PageHeader title={<FormattedMessage id="page.catalog.title" />} subtitle={<FormattedMessage id="page.catalog.subtitle" />} />
               <ProductsWrapper />
-
             </div>)
   }
 }

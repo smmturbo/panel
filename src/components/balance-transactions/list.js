@@ -1,6 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
-//import { Table } from 'reactstrap'
+import { FormattedMessage } from 'react-intl'
 
 import { BalanceTransactionsListItem } from './'
 
@@ -12,8 +12,8 @@ class BalanceTransactionsList extends React.PureComponent {
             <thead>
             <tr>
               <th>ID</th>
-              <th>Data</th>
-              <th>Valor (R$)</th>
+              <th><FormattedMessage id="general.date" /></th>
+              <th><FormattedMessage id="general.amount" /></th>
               <th>&nbsp;</th>
             </tr>
             </thead>

@@ -15,7 +15,7 @@ class SubscriptionsWrapper extends React.Component {
     }
 
     if(isEmpty(subscriptions) ) {
-      return <EmptyList message="Nenhum pedido com esses parâmetros" />
+      return <EmptyList />
     }
 
     return <SubscriptionList subscriptions={subscriptions} />

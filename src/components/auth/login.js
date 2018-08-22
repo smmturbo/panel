@@ -5,6 +5,8 @@ import { compose } from 'recompose'
 import { withFirebase } from 'react-redux-firebase'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { FormattedMessage } from 'react-intl'
+
 import { FormInput, PageHeader, LoadingMessage } from '../interface'
 import { notifyError } from '../../actions'
 import { AuthToggler } from './'
@@ -24,7 +26,7 @@ class AuthLogin extends React.Component {
       this.setState({processing: false})
     }
     else {
-      this.props.notifyError('Usuário ou senha faltando')
+      this.props.notifyError('Username or password missing')
       this.setState({processing: false})
     }
   }
@@ -49,16 +51,20 @@ class AuthLogin extends React.Component {
 
                       <Field
                         name="password"
-                        label="Senha"
+                        label="Password / Senha"
                         type="password"
-                        placeholder="Senha (mín. 6 caracteres)"
+                        placeholder="Min 6 chars"
                         component={FormInput}
                       />
 
                       <div className="my-3 d-flex justify-content-between align-items-center">
-                        <Button color="primary" >Prosseguir</Button>
+                        <Button color="primary" >
+                          <FormattedMessage id="auth.login_button" />
+                        </Button>
                         { this.state.processing ? <LoadingMessage /> : '' }
-                        <Link to="/auth/reset" >Recuperar senha</Link>
+                        <Link to="/auth/reset" >
+                          <FormattedMessage id="auth.recover_password" />
+                        </Link>
                       </div>
 
                     </form>
@@ -72,11 +78,11 @@ function validate(values) {
   const errors = {}
 
   if(!values.email) {
-    errors.email = 'Por favor insira um e-mail'
+    errors.email = 'Insert e-mail'
   }
 
   if(!values.password) {
-    errors.password = 'Por favor insira senha'
+    errors.password = 'Insert password'
   }
 
   return errors

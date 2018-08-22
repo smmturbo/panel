@@ -15,7 +15,7 @@ class OrdersWrapper extends React.Component {
     }
 
     if(isEmpty(orders) ) {
-      return <EmptyList message="Nenhum pedido com esses parâmetros" />
+      return <EmptyList />
     }
 
     return <OrderList orders={orders} />

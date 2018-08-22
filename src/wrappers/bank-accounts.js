@@ -20,7 +20,7 @@ class BankAccountsWrapper extends React.Component {
     }
 
     if(isEmpty(bankAccounts) ) {
-      return <EmptyList message="Nenhuma conta bancária" />
+      return <EmptyList />
     }
 
     return (<div>

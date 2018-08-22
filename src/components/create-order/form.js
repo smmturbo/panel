@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { firebaseConnect, isEmpty } from 'react-redux-firebase'
 import { Button, Card, CardBody, FormGroup, FormText, Alert, Input, Label } from 'reactstrap'
 import _ from 'lodash'
+import { FormattedMessage } from 'react-intl'
 
 import { notifySuccess } from '../../actions'
 import { LoadingMessage } from '../../components/interface'
@@ -35,7 +36,7 @@ class CreateOrderForm extends React.Component {
                 <p><small>Total: R${ this._calculateCharge() }</small></p>
 
                 <div className="my-2" >
-                  { this.props.processing ? <LoadingMessage /> : <Button color="primary" onClick={ this._handleAction } >Enviar pedido</Button> }
+                  { this.props.processing ? <LoadingMessage /> : <Button color="primary" onClick={ this._handleAction } ><FormattedMessage id="create_order.button_create_order" /></Button> }
                 </div>
 
               </CardBody>
@@ -86,12 +87,12 @@ class CreateOrderForm extends React.Component {
     // Detect quantities
     if(rawQuantity < product.minimum)  {
       errorData.error = true
-      errorData.errors.push('Quantidade mínima é ' + product.minimum)
+      errorData.errors.push('Minimum quantity is ' + product.minimum)
     }
 
     if(rawQuantity > product.maximum)  {
       errorData.error = true
-      errorData.errors.push('Quantidade máxima é ' + product.maximum)
+      errorData.errors.push('Maximum quantity is ' + product.maximum)
     }
 
     // Pass each item through a validator

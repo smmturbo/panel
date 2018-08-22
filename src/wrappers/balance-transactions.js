@@ -16,7 +16,7 @@ class BalanceTransactionsWrapper extends React.Component {
     }
 
     if(isEmpty(balanceTransactions) ) {
-      return <EmptyList message="Nenhuma transação registrada." />
+      return <EmptyList />
     }
 
     return <BalanceTransactionsList balanceTransactions={_.orderBy(balanceTransactions, ['id', 'desc'])} />

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-//import axios from 'axios'
+import { FormattedMessage } from 'react-intl'
 
 import { PageHeader, PageToolbar  } from '../../components/interface'
 import { SubscriptionStatusFilter } from '../../components/subscriptions'
@@ -13,13 +13,10 @@ class SubscriptionsPage extends React.Component {
   render()  {
 
     return (
-      <div className="container" >
-        <PageHeader title="Gerenciamento de assinaturas" />
-
-        <PageToolbar left={[ {label: 'Novo pedido', to: `/orders/add`}] } />
-
+      <div>
+        <PageToolbar left={[ {label: <FormattedMessage id="page.subscriptions.toolbar.create" />, to: `/orders/add`}] } />
+        <PageHeader title={<FormattedMessage id="page.subscriptions.title" />} />
         <SubscriptionStatusFilter status={this.state.status} handleClick={this._selectStatus} />
-
         <SubscriptionsWrapper status={this.state.status} />
 
         { this._helmet() }
@@ -32,7 +29,7 @@ class SubscriptionsPage extends React.Component {
   }
 
   _helmet() {
-    return <Helmet><title>Gerenciamento de assinaturas - PainelAS</title></Helmet>
+    return <Helmet><title>Subscriptions / Assinaturas - PainelAS</title></Helmet>
   }
 }
 

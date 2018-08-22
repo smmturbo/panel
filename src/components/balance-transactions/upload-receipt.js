@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Card, CardBody, CardHeader } from 'reactstrap'
 import Dropzone from 'react-dropzone'
+import { FormattedMessage } from 'react-intl'
 
 import { LoadingMessage} from '../interface'
 
@@ -16,7 +17,7 @@ class UploadBankTransferReceipt extends Component {
   uploadFile = () => {
     const { uploadedFile } = this.state
     if(!uploadedFile) {
-      alert('Por favor selecione um arquivo')
+      alert('Please select a file')
       this.resetFileUpload()
       return false
     }
@@ -58,7 +59,10 @@ class UploadBankTransferReceipt extends Component {
           Arquivo selecionado: {uploadedFile.name}
         </div>
 
-        <p><Button onClick={this.uploadFile} color="success" >Enviar arquivo</Button></p>
+        <p>
+          <Button onClick={this.uploadFile} color="success" >
+            <FormattedMessage id="receipts.button_send_file" />
+          </Button></p>
 
         <a href="javascript:;" onClick={this.resetFileUpload} >cancelar</a>
       </div>
@@ -75,7 +79,7 @@ class UploadBankTransferReceipt extends Component {
                   }}
             >
               <div>
-                Clique para selecionar o arquivo
+                <FormattedMessage id="receipts.click_to_select_file" />
               </div>
           </Dropzone>)
   }
@@ -88,7 +92,9 @@ class UploadBankTransferReceipt extends Component {
     return (
         <div className="my-3" >
           <Card>
-            <CardHeader>Inserir comprovante de transferência</CardHeader>
+            <CardHeader>
+              <FormattedMessage id="receipts.title_insert_receipt" />
+            </CardHeader>
             <CardBody>
 
               { processing ? <LoadingMessage /> : fileUploadPending ? this.renderFileUploadArea() : this.renderDropZone() }

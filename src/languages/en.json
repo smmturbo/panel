@@ -1,0 +1,139 @@
+{
+  "menu.auth": "Login / Registration",
+  "menu.support": "Support",
+  "menu.new_order" : "New Order",
+  "menu.orders" : "Orders",
+  "menu.subscriptions" : "Subscriptions",
+  "menu.prices_services" : "Prices & Services",
+  "menu.api" : "API",
+  "menu.add_balance" : "Add balance",
+  "menu.account" : "Account",
+  "menu.tos" : "Terms of Service",
+  "menu.logout" : "Logout",
+
+  "api_key.no_key" : "You don't have an API Key.",
+  "api_key.api_key" : "API Key",
+  "api_key.url" : "URL",
+  "api_key.create_key" : "Generate API Key",
+
+  "auth.login_button" : "Login",
+  "auth.recover_password" : "Recover password",
+  "auth.password_placeholder" : "Password (min. 6 chars)",
+  "auth.personal_info_privacy_message" : "As informações fornecidas serão mantidas em total sigilo e apenas utilizamos para prestar um melhor suporte.",
+  "auth.register_button" : "Register",
+
+  "auth.no_account_text" : "Don't have an account?",
+  "auth.no_account_button" : "Free registration",
+  "auth.has_account_text" : "Already have an account?",
+  "auth.has_account_button" : "Login",
+
+  "general.date" : "Date",
+  "general.amount" : "Price (BRL)",
+
+  "receipts.button_send_file" : "Send file",
+  "receipts.click_to_select_file" : "Click here to select a file",
+  "receipts.title_insert_receipt" : "Upload bank transfer receipt",
+
+  "bank_accounts.owner" : "Owner",
+  "bank_accounts.branch" : "Branch/Routing number",
+  "bank_accounts.account_number" : "Account number",
+  "bank_accounts.extra" : "Extra",
+
+  "create_order.button_create_order" : "Create order",
+  "create_order.per_thousand_units" : "per 1000 units",
+  "create_order.back" : "Back",
+  "create_order.list_title_buying" : "You are buying",
+
+  "interface.empty_list.message" : "No results.",
+  "interface.loading_message.message" : "Loading...",
+
+  "footer.copy_site_name" : "PainelAS - AumentarSeguidores.com",
+
+  "order_list.get_id" : "Get ID",
+  "order_list.headers.id_and_date" : "ID/Date",
+  "order_list.headers.service" : "Service",
+  "order_list.headers.quantity" : "Quanty.",
+  "order_list.headers.profile_link" : "Profile/Link",
+  "order_list.headers.amount" : "Price",
+  "order_list.headers.status" : "Status",
+  "order_list.headers.initial_count" : "Start count",
+
+  "order_list.status_filter.processing" : "Processing",
+  "order_list.status_filter.pending" : "Pending",
+  "order_list.status_filter.completed" : "Completed",
+  "order_list.status_filter.canceled" : "Canceled/Error",
+
+  "subscription_list.id" : "ID",
+  "subscription_list.headers.date" : "Date",
+  "subscription_list.headers.service" : "Service",
+  "subscription_list.headers.quantity" : "Quanty.",
+  "subscription_list.headers.profile_link" : "Profile/Link",
+  "subscription_list.headers.amount" : "Price",
+  "subscription_list.headers.status" : "Status",
+
+  "subscription_list.status_filter.active" : "Active",
+  "subscription_list.status_filter.paused" : "Paused",
+  "subscription_list.status_filter.completed" : "Completed",
+  "subscription_list.status_filter.canceled" : "Cancelados/Erro",
+
+  "products.title.attention" : "ATTENTION",
+  "products.price" : "Price",
+  "products.id" : "ID",
+
+  "page.account.api.title" : "API Key",
+  "page.account.api.subtitle" : "Make requests to our API to automate your orders.",
+  "page.account.api.api_docs" : "API Docs",
+  "page.account.api.back" : "Voltar",
+
+  "page.account.view.title" : "My account",
+  "page.account.view.email" : "E-mail",
+  "page.account.view.name" : "Name",
+  "page.account.view.phone" : "Phone",
+
+  "page.account.view.password" : "Password",
+  "page.account.view.reset_password" : "Reset password",
+  "page.account.view.order_history" : "Order history",
+  "page.account.view.balance_history" : "Balance history",
+  "page.account.view.support" : "Help & Support",
+
+  "page.auth.reset_password.title" : "Reset password",
+  "page.auth.reset_password.subtitle" : "Please insert your e-mail address so we can send a link to reset your password.",
+  "page.auth.reset_password.confirm" : "Confirm",
+  "page.auth.reset_password.back" : "Back",
+
+  "page.balance.add.section_title.brazil_pagseguro" : "Brazil: PagSeguro / Mercado Pago",
+  "page.balance.add.brazil_pay_now_pagseguro": "Brazil: Pay with PagSeguro or Mercado Pago",
+  "page.balance.add.brazil_credit_card_boleto" : "Brazil: Credit Card and Boleto",
+  "page.balance.add.section_title.brazil_bank_transfer" : "Brazil: Bank Transfer",
+  "page.balance.add.back" : "Back",
+
+  "page.balance.add.title" : "Add balance",
+  "page.balance.add.subtitle" : "Choose a payment method and send us a receipt of your payment so we can add your balance.",
+
+  "page.balance.view.title" : "Balance",
+  "page.balance.view.toolbar.add" : "Add balance",
+  "page.balance.view.toolbar.back" : "Back",
+  "page.balance.view.section_title.balance_history" : "Transaction history",
+
+  "page.extras.support.title" : "Help & Support",
+  "page.extras.support.if_you_have_problems" : "If you find any problems, don't hesitate to get in touch.",
+  "page.extras.support.faq" : "FAQ",
+  "page.extras.support.email" : "E-mail",
+
+  "page.orders.create.title" : "New order",
+  "page.orders.create.alert.problems_or_questions" : "Problems or questions?",
+  "page.orders.create.window_title" : "New order - PainelAS",
+  "page.orders.create.warnings.title" : "ATTENTION",
+  "page.orders.create.warnings.private_profile" : "The profile must be public O perfil não pode estar em modo privado.",
+  "page.orders.create.warnings.no_double_order" : "Do not place an order to the same profile if there's a previous order processing.",
+  "page.orders.create.warnings.attention_to_data" : "Please check all the information you are providing. Once an order is placed, there's no way to cancel or be refunded.",
+
+  "page.orders.title" : "Orders",
+  "page.orders.toolbar.create" : "New order",
+
+  "page.subscriptions.title" : "Subscriptions",
+  "page.subscriptions.toolbar.create" : "New order",
+
+  "page.catalog.title" : "Services list",
+  "page.catalog.subtitle" : "Use service IDs to place orders using our API."
+}
