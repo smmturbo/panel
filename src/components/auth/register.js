@@ -18,7 +18,8 @@ class AuthRegister extends React.Component {
 
     const { firebase } = this.props
     const { email, password, password_repeat, name, phone } = values
-    const profile = { email, createdOn: Date.now() }
+    const balance = { before: 0, current: 0, modifiedOn: Date.now() }
+    const profile = { email, createdOn: Date.now(), balance }
 
     this.setState({processing: true})
 

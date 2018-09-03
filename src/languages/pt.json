@@ -102,6 +102,8 @@
   "page.auth.reset_password.confirm" : "Confirmar",
   "page.auth.reset_password.back" : "Voltar",
 
+  "page.auth.login.questions_talk_to_us" : "Dúvidas? Fale conosco",
+
   "page.balance.add.section_title.brazil_pagseguro" : "PagSeguro / Mercado Pago",
   "page.balance.add.brazil_credit_card_boleto" : "Cartão de Crédito e Boleto Bancário",
   "page.balance.add.brazil_pay_now_pagseguro": "Pagar com PagSeguro ou Mercado Pago",
